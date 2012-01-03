@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>StopCalls5</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="backend">
+	<div id="banner">
+		<%= image_tag("StopThoseCalls.png") %>
+		<%= @page_title || "" %>
+     <ul class="hmenu">
+     <%= render 'devise/menu/login_items' %>
+  </ul>
+	</div>
+  
+<div id="columns">
+    <div id="side">
+      <ul>
+	    <li><a href="/">Home</a></li>
+      
+     <%= render 'devise/menu/registration_items' %>
+     <%= render 'devise/menu/menu_items' %>
+  
+      </ul>
+    </div>
+    
+    
+    
+     <div id="main">
+    
+      <div id="container">            
+        
+  <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+
+<%= yield %>
+</div>
+</div>
+</body>
+</html>

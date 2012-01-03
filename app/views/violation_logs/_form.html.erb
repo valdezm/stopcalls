@@ -1,0 +1,33 @@
+<%= form_for(@violation_log) do |f| %>
+  <% if @violation_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@violation_log.errors.count, "error") %> prohibited this violation_log from being saved:</h2>
+
+      <ul>
+      <% @violation_log.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :comments %><br />
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_name %><br />
+    <%= f.text_field :contact_name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+    <div class="field">
+    <%= f.label :violation_line_id %><br />
+    <%= f.number_field :violation_line_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

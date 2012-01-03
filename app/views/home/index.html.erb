@@ -1,0 +1,64 @@
+ <% if user_signed_in? %>
+<div>
+  Email:  <%= current_user.email %><br>
+  
+ID:  <%= current_user.id %><br>
+  Type: <%= current_user.roles.first.name %><br>
+  
+  <% if current_user.testprofile2 %>
+  <div>
+  <table><h1>Profile</h1>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Line add</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip</th>
+    </tr>
+    <tr>
+      <td><%= current_user.testprofile2.f_name%> </td>
+      <td><%= current_user.testprofile2.l_name%> </td>
+      <td><%= current_user.testprofile2.line_add%> </td>
+    <td><%= current_user.testprofile2.city_add %></td>
+      <td><%= current_user.testprofile2.state_add%> </td>
+      <td><%= current_user.testprofile2.zip_add%> </td>
+    </tr>
+  </table>
+</div>
+  <%= link_to "Edit your profile", edit_testprofile2_path(current_user.testprofile2) %>
+
+    <h1>Products Offered</h1>
+    <%@products.each do |product|%>
+    <div class="entry">
+      <%=image_tag(product.image_url)%>
+      <h3><%=product.title%></h3>
+      <%=sanitize(product.description)%>
+      <div class="price_line">
+        <span class="price"><%=number_to_currency(product.price)%></span>
+        
+        <%=button_to 'Check Out', line_items_path(:product_id => product)%>
+        
+      </div>
+    </div>
+    <%end%>
+  <%else%>
+  <%= link_to "Create your profile", new_testprofile2_path %>
+  <%end%>
+</div>
+<% else %>
+<div>
+  <h1>Sign Up to begin using StopTheCalls!</h1>
+    <h1>Products Offered</h1>
+    <%@products.each do |product|%>
+    <div class="entry">
+      <%=image_tag(product.image_url)%>
+      <h3><%=product.title%></h3>
+      <%= sanitize(product.description) %>
+      <div class="price_line">
+        <span class="price"><%=number_to_currency(product.price)%></span>
+      </div>
+    </div>
+    <%end%>
+</div>
+<%end%>

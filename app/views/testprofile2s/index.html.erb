@@ -1,0 +1,29 @@
+<div><h1>Admin Profile Access</h1>
+  <table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Line address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<%@testprofile2s.each do |testprofile2| %>
+  <tr>
+    <td><%= testprofile2.f_name %></td>
+    <td><%= testprofile2.l_name %></td>
+    <td><%= testprofile2.line_add %></td>
+    <td><%= testprofile2.city_add %></td>
+    <td><%= testprofile2.state_add %></td>
+    <td><%= testprofile2.zip_add %></td>
+    <td><%= link_to 'Show', testprofile2 %></td>
+    <td><%= link_to 'Edit', edit_testprofile2_path(testprofile2) %></td>
+    <td><%= link_to 'Destroy', testprofile2, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+</div>

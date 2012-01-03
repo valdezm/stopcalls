@@ -1,0 +1,27 @@
+<h1>Listing violation_lines</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>User</th>
+    <th>Violationtype</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @violation_lines.each do |violation_line| %>
+  <tr>
+    <td><%= violation_line.company_id %></td>
+    <td><%= violation_line.user_id %></td>
+    <td><%= violation_line.violationtype_id %></td>
+    <td><%= link_to 'Show', violation_line %></td>
+    <td><%= link_to 'Edit', edit_violation_line_path(violation_line) %></td>
+    <td><%= link_to 'Destroy', violation_line, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Violation line', new_violation_line_path %>

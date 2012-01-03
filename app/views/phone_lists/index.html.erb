@@ -1,0 +1,27 @@
+<h1>Listing phone_lists</h1>
+
+<table>
+  <tr>
+    <th>Area code</th>
+    <th>Phone num</th>
+    <th>Company</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @phone_lists.each do |phone_list| %>
+  <tr>
+    <td><%= phone_list.area_code %></td>
+    <td><%= phone_list.phone_num %></td>
+    <td><%= phone_list.company_id %></td>
+    <td><%= link_to 'Show', phone_list %></td>
+    <td><%= link_to 'Edit', edit_phone_list_path(phone_list) %></td>
+    <td><%= link_to 'Destroy', phone_list, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Phone list', new_phone_list_path %>

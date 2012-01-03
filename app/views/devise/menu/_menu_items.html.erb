@@ -1,0 +1,29 @@
+ <% if user_signed_in? %>
+ <% if current_user.testprofile2 %>
+   <li>
+  
+  <%= link_to "Edit profile", edit_testprofile2_path(current_user.testprofile2) %>
+   </li>
+    <%if current_user.role? :Admin%>
+    <h3>Admin</h3>
+    
+	    <li><a href="/testprofile2s/">View Profiles</a></li>
+      
+	    <li><a href="/products/">Products</a></li>
+      
+	    <li><a href="/orders/">Orders</a></li>
+      
+	    <li><%= link_to "Violations All", violations_admin_path %></li>
+      
+    <h3>Every User Links</h3>
+    <%end%>
+    
+       <li><a href="/myorders/">My Orders</a></li>
+      
+      <li><%= link_to "Violations", violations_index_path %></li>
+  <%else%>
+  <li>  
+  <%= link_to "Create your profile", new_testprofile2_path %>
+   </li>
+  <%end%>
+ <% end %>

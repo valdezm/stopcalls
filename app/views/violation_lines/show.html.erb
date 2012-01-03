@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @violation_line.company_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @violation_line.user_id %>
+</p>
+
+<p>
+  <b>Violationtype:</b>
+  <%= @violation_line.violation_type_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_violation_line_path(@violation_line) %> |
+<%= link_to 'Back', violation_lines_path %>

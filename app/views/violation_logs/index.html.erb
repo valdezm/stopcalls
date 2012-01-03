@@ -1,0 +1,27 @@
+<h1>Listing violation_logs</h1>
+
+<table>
+  <tr>
+    <th>Comments</th>
+    <th>Contact name</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @violation_logs.each do |violation_log| %>
+  <tr>
+    <td><%= violation_log.comments %></td>
+    <td><%= violation_log.contact_name %></td>
+    <td><%= violation_log.date %></td>
+    <td><%= link_to 'Show', violation_log %></td>
+    <td><%= link_to 'Edit', edit_violation_log_path(violation_log) %></td>
+    <td><%= link_to 'Destroy', violation_log, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Violation log', new_violation_log_path %>

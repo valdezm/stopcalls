@@ -1,0 +1,15 @@
+ <% if user_signed_in? %>
+  <% if current_user.testprofile2 %>
+<li class="name"><%= current_user.testprofile2.f_name%>
+</li><li class="name"><%= current_user.testprofile2.l_name%>
+</li>
+<%end%>
+   <li>
+   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  
+   </li>
+ <% else %>
+   <li>
+   <%= link_to('Login', new_user_session_path)  %>
+   </li>
+ <% end %>
