@@ -69,6 +69,9 @@ class CompaniesController < ApplicationController
       end
     end
   end
+  def list
+    @companies = Company.all
+  end
 
   # DELETE /companies/1
   # DELETE /companies/1.json

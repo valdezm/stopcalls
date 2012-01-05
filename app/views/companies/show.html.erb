@@ -25,7 +25,9 @@
   <%= @company.zip_add %>
 </p>
 
+<% @company.phone_lists.each do |phone| %>
+<%='('+phone.area_code.to_s+') '+phone.phone_num.to_s%>
+<%end%>
 
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<%= link_to 'Back', companies_list_path %>

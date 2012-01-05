@@ -2,6 +2,7 @@ StopCalls5::Application.routes.draw do
   get "violations/admin"
   get "violations/index"
   get "violation_types/show_all"
+  get "companies/list"
   get "violation_logs/add"
   resources :violations
 
