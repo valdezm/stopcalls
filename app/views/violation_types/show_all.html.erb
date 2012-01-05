@@ -1,0 +1,22 @@
+<h1>Listing all violation types</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Description</th>
+    <th></th>
+    <th>Is referable</th>
+  </tr>
+
+<% @violation_types.each do |violation_type| %>
+  <tr>
+    <td><%= violation_type.name %></td><td></td>
+    <td><%= violation_type.description %></td><td></td>
+    <td><%= violation_type.is_referable %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

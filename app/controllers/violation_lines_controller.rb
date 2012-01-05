@@ -25,7 +25,6 @@ class ViolationLinesController < ApplicationController
   # GET /violation_lines/new.json
   def new
     @violation_line = ViolationLine.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @violation_line }

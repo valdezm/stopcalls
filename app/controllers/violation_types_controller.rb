@@ -9,6 +9,16 @@ class ViolationTypesController < ApplicationController
       format.json { render json: @violation_types }
     end
   end
+  
+def show_all
+    @violation_types = ViolationType.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @violation_types }
+    end
+  end
+
 
   # GET /violation_types/1
   # GET /violation_types/1.json

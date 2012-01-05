@@ -1,3 +1,3 @@
 class PhoneList < ActiveRecord::Base
-  has_one :company
+  belongs_to :company
 end

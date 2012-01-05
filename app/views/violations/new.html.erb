@@ -1,0 +1,83 @@
+<%= form_for @violation_line, :url => { :action => "create" } do |f| %>
+Building for <%=@violation_line.user.testprofile2.f_name%>
+Building for <%=@violation_line.company.name%>
+  <% if @violation_line.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@violation_type.errors.count, "error") %> prohibited this violation_type from being saved:</h2>
+
+      <ul>
+      <% @violation_type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+    <h3>Violation Type</h3>
+<%= f.select(:violation_type_id, ViolationType.all.collect{|v|[v.name, v.id]})%>
+
+    <h3>Company information</h3>
+
+<div id="company">
+<%= f.fields_for :company do |ccf|%>
+  <div class="field">
+    <%= ccf.label :name %><br />
+    <%= ccf.text_field :name %>
+  </div>
+  <div class="field">
+    <%= ccf.label :add_line %><br />
+    <%= ccf.text_field :add_line %>
+  </div>
+  <div class="field">
+    <%= ccf.label :description %><br />
+    <%= ccf.text_area :description %>
+  </div>
+  <div class="field">
+    <%= ccf.label :state_add %><br />
+    <%= ccf.text_field :state_add %>
+  </div>
+  <div class="field">
+    <%= ccf.label :zip_add %><br />
+    <%= ccf.number_field :zip_add %>
+  </div>
+  
+  
+  <%= ccf.fields_for :phone_lists do |pf|%>
+    <div class="field">
+    <%= pf.label :area_code %><br />
+    <%= pf.number_field :area_code %>
+  </div>
+  <div class="field">
+    <%= pf.label :phone_num %><br />
+    <%= pf.number_field :phone_num %>
+  </div>
+  <div class="field">
+    <%= pf.label :company_id %><br />
+    <%= pf.number_field :company_id %>
+  </div>
+<%end%>
+<%end%>
+</div>
+
+<h3>Violation Log Information</h3>
+<%= f.fields_for :violation_logs do |cf|%>
+  <div class="field">
+    <%= cf.label :comments %><br />
+    <%= cf.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= cf.label :contact_name %><br />
+    <%= cf.text_field :contact_name %>
+  </div>
+  <div class="field">
+    <%= cf.label :date %><br />
+    <%= cf.text_field :date %>
+  </div>
+  
+  <%end%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

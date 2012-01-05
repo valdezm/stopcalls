@@ -9,7 +9,9 @@ class ViolationLogsController < ApplicationController
       format.json { render json: @violation_logs }
     end
   end
-
+  def add
+    @violation_log = ViolationLog.new
+  end
   # GET /violation_logs/1
   # GET /violation_logs/1.json
   def show

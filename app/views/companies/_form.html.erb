@@ -31,6 +31,21 @@
     <%= f.label :zip_add %><br />
     <%= f.number_field :zip_add %>
   </div>
+  
+  <%= f.fields_for :phone_lists do |pf|%>
+    <div class="field">
+    <%= pf.label :area_code %><br />
+    <%= pf.number_field :area_code %>
+  </div>
+  <div class="field">
+    <%= pf.label :phone_num %><br />
+    <%= pf.number_field :phone_num %>
+  </div>
+  <div class="field">
+    <%= pf.label :company_id %><br />
+    <%= pf.number_field :company_id %>
+  </div>
+<%end%>
   <div class="actions">
     <%= f.submit %>
   </div>

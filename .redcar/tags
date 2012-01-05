@@ -1,4 +1,4 @@
-1325627815
+1325730659
 Ability	C:/Sites/StopCalls5/app/models/ability.rb	class Ability
 AddCityToTestprofile2	C:/Sites/StopCalls5/db/migrate/20111229225849_add_city_to_testprofile2.rb	class AddCityToTestprofile2 
 AddUserIdToTestprofile2	C:/Sites/StopCalls5/db/migrate/20111229194203_add_user_id_to_testprofile2.rb	class AddUserIdToTestprofile2 
@@ -18,6 +18,8 @@ CreateTestprofiles	C:/Sites/StopCalls5/db/migrate/20111229181805_create_testprof
 CreateViolationLines	C:/Sites/StopCalls5/db/migrate/20111230154818_create_violation_lines.rb	class CreateViolationLines 
 CreateViolationLogs	C:/Sites/StopCalls5/db/migrate/20111230155843_create_violation_logs.rb	class CreateViolationLogs 
 CreateViolationTypes	C:/Sites/StopCalls5/db/migrate/20111230154606_create_violation_types.rb	class CreateViolationTypes 
+CreateViolations	C:/Sites/StopCalls5/db/migrate/20120104195847_create_violations.rb	class CreateViolations 
+CreateViolations2s	C:/Sites/StopCalls5/db/migrate/20120104194613_create_violations2s.rb	class CreateViolations2s 
 HomeController	C:/Sites/StopCalls5/app/controllers/home_controller.rb	class HomeController 
 HomeHelper	C:/Sites/StopCalls5/app/helpers/home_helper.rb	module HomeHelper
 LineItem	C:/Sites/StopCalls5/app/models/line_item.rb	class LineItem 
@@ -42,6 +44,7 @@ Testprofile2sHelper	C:/Sites/StopCalls5/app/helpers/testprofile2s_helper.rb	modu
 TestprofileHelper	C:/Sites/StopCalls5/app/helpers/testprofile_helper.rb	module TestprofileHelper
 User	C:/Sites/StopCalls5/app/models/user.rb	class User 
 UserRoles	C:/Sites/StopCalls5/db/migrate/20111229174611_user_roles.rb	class UserRoles 
+Violation	C:/Sites/StopCalls5/app/models/violation.rb	class Violation 
 ViolationLine	C:/Sites/StopCalls5/app/models/violation_line.rb	class ViolationLine 
 ViolationLinesController	C:/Sites/StopCalls5/app/controllers/violation_lines_controller.rb	class ViolationLinesController 
 ViolationLinesHelper	C:/Sites/StopCalls5/app/helpers/violation_lines_helper.rb	module ViolationLinesHelper
@@ -51,8 +54,10 @@ ViolationLogsHelper	C:/Sites/StopCalls5/app/helpers/violation_logs_helper.rb	mod
 ViolationType	C:/Sites/StopCalls5/app/models/violation_type.rb	class ViolationType 
 ViolationTypesController	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	class ViolationTypesController 
 ViolationTypesHelper	C:/Sites/StopCalls5/app/helpers/violation_types_helper.rb	module ViolationTypesHelper
+Violations2sHelper	C:/Sites/StopCalls5/app/helpers/violations2s_helper.rb	module Violations2sHelper
 ViolationsController	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	class ViolationsController 
-admin	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	  def admin
+add	C:/Sites/StopCalls5/app/controllers/violation_logs_controller.rb	  def add
+admin	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	 def admin
 build	C:/Sites/StopCalls5/app/controllers/profile_controller.rb	  def build
 change	C:/Sites/StopCalls5/db/migrate/20111229181805_create_testprofiles.rb	  def change
 change	C:/Sites/StopCalls5/db/migrate/20111229191158_create_testprofile2s.rb	  def change
@@ -63,6 +68,8 @@ change	C:/Sites/StopCalls5/db/migrate/20111230154818_create_violation_lines.rb	 
 change	C:/Sites/StopCalls5/db/migrate/20111230155203_create_phone_lists.rb	  def change
 change	C:/Sites/StopCalls5/db/migrate/20111230155404_create_companies.rb	  def change
 change	C:/Sites/StopCalls5/db/migrate/20111230155843_create_violation_logs.rb	  def change
+change	C:/Sites/StopCalls5/db/migrate/20120104194613_create_violations2s.rb	  def change
+change	C:/Sites/StopCalls5/db/migrate/20120104195847_create_violations.rb	  def change
 create	C:/Sites/StopCalls5/app/controllers/companies_controller.rb	  def create
 create	C:/Sites/StopCalls5/app/controllers/line_items_controller.rb	  def create
 create	C:/Sites/StopCalls5/app/controllers/orders_controller.rb	  def create
@@ -72,6 +79,7 @@ create	C:/Sites/StopCalls5/app/controllers/testprofile2s_controller.rb	  def cre
 create	C:/Sites/StopCalls5/app/controllers/violation_lines_controller.rb	  def create
 create	C:/Sites/StopCalls5/app/controllers/violation_logs_controller.rb	  def create
 create	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	  def create
+create	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	  def create
 current_order	C:/Sites/StopCalls5/app/controllers/application_controller.rb	def current_order
 destroy	C:/Sites/StopCalls5/app/controllers/companies_controller.rb	  def destroy
 destroy	C:/Sites/StopCalls5/app/controllers/line_items_controller.rb	  def destroy
@@ -82,6 +90,7 @@ destroy	C:/Sites/StopCalls5/app/controllers/testprofile2s_controller.rb	  def de
 destroy	C:/Sites/StopCalls5/app/controllers/violation_lines_controller.rb	  def destroy
 destroy	C:/Sites/StopCalls5/app/controllers/violation_logs_controller.rb	  def destroy
 destroy	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	  def destroy
+destroy	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	  def destroy
 down	C:/Sites/StopCalls5/db/migrate/20111229174544_roles.rb	  def self.down
 down	C:/Sites/StopCalls5/db/migrate/20111229174611_user_roles.rb	  def self.down
 down	C:/Sites/StopCalls5/db/migrate/20111229194203_add_user_id_to_testprofile2.rb	  def down
@@ -96,6 +105,7 @@ edit	C:/Sites/StopCalls5/app/controllers/testprofile2s_controller.rb	  def edit
 edit	C:/Sites/StopCalls5/app/controllers/violation_lines_controller.rb	  def edit
 edit	C:/Sites/StopCalls5/app/controllers/violation_logs_controller.rb	  def edit
 edit	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	  def edit
+edit	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	  def edit
 index	C:/Sites/StopCalls5/app/controllers/companies_controller.rb	  def index
 index	C:/Sites/StopCalls5/app/controllers/home_controller.rb	  def index
 index	C:/Sites/StopCalls5/app/controllers/line_items_controller.rb	  def index
@@ -118,6 +128,7 @@ new	C:/Sites/StopCalls5/app/controllers/testprofile2s_controller.rb	  def new
 new	C:/Sites/StopCalls5/app/controllers/violation_lines_controller.rb	  def new
 new	C:/Sites/StopCalls5/app/controllers/violation_logs_controller.rb	  def new
 new	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	  def new
+new	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	  def new
 role?	C:/Sites/StopCalls5/app/models/user.rb	  def role?(role)
 setup_role	C:/Sites/StopCalls5/app/models/user.rb	def setup_role
 show	C:/Sites/StopCalls5/app/controllers/companies_controller.rb	  def show
@@ -129,6 +140,8 @@ show	C:/Sites/StopCalls5/app/controllers/testprofile2s_controller.rb	  def show
 show	C:/Sites/StopCalls5/app/controllers/violation_lines_controller.rb	  def show
 show	C:/Sites/StopCalls5/app/controllers/violation_logs_controller.rb	  def show
 show	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	  def show
+show	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	  def show
+show_all	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	def show_all
 up	C:/Sites/StopCalls5/db/migrate/20111229174544_roles.rb	  def self.up
 up	C:/Sites/StopCalls5/db/migrate/20111229174611_user_roles.rb	  def self.up
 up	C:/Sites/StopCalls5/db/migrate/20111229194203_add_user_id_to_testprofile2.rb	  def up
@@ -143,3 +156,4 @@ update	C:/Sites/StopCalls5/app/controllers/testprofile2s_controller.rb	  def upd
 update	C:/Sites/StopCalls5/app/controllers/violation_lines_controller.rb	  def update
 update	C:/Sites/StopCalls5/app/controllers/violation_logs_controller.rb	  def update
 update	C:/Sites/StopCalls5/app/controllers/violation_types_controller.rb	  def update
+update	C:/Sites/StopCalls5/app/controllers/violations_controller.rb	  def update

@@ -1,4 +1,4 @@
-<%= form_for(@violation_line) do |f| %>
+<%= form_for @violation_line, :url => { :action => "new" } do |f| %>
   <% if @violation_line.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@violation_line.errors.count, "error") %> prohibited this violation_line from being saved:</h2>

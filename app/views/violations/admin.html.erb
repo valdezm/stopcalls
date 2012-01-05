@@ -1,12 +1,15 @@
 <%@users.each do |user|%>
+<%i=0%>
 <%user.violation_lines.each do |violation|%>
+<%i=i+1%>
+<h2><%= 'Violation # '+i.to_s + ' for '+user.testprofile2.f_name + ' ' + user.testprofile2.l_name%></h2>
 <div class="entry">
 <h3>Company: <%=violation.company.name%></h3>
 Company Address: <%=violation.company.add_line%><br>
 Company Address: <%=violation.company.state_add%><br>
 Company Address: <%=violation.company.zip_add%><br>
 
-A phone number: <%=violation.company.phone_lists.first.phone_num%><br>
+A phone number: <%=violation.company.phone_lists.first.phone_num if violation.company.phone_lists.first %><br>
 
 <h3>Violation Data</h3>
 Violation Type Name: <%=violation.violation_type.name%><br>
