@@ -42,6 +42,7 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company = Company.new(params[:company])
+    @company.phone_lists.first.company_id=@company.id
 
     respond_to do |format|
       if @company.save

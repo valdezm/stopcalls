@@ -1,4 +1,4 @@
-1325805130
+1325810471
 Ability	C:/Sites/StopCalls5/app/models/ability.rb	class Ability
 AddCityToTestprofile2	C:/Sites/StopCalls5/db/migrate/20111229225849_add_city_to_testprofile2.rb	class AddCityToTestprofile2 
 AddUserIdToTestprofile2	C:/Sites/StopCalls5/db/migrate/20111229194203_add_user_id_to_testprofile2.rb	class AddUserIdToTestprofile2 
@@ -70,6 +70,7 @@ change	C:/Sites/StopCalls5/db/migrate/20111230155404_create_companies.rb	  def c
 change	C:/Sites/StopCalls5/db/migrate/20111230155843_create_violation_logs.rb	  def change
 change	C:/Sites/StopCalls5/db/migrate/20120104194613_create_violations2s.rb	  def change
 change	C:/Sites/StopCalls5/db/migrate/20120104195847_create_violations.rb	  def change
+company_add	C:/Sites/StopCalls5/app/controllers/phone_lists_controller.rb	def company_add
 create	C:/Sites/StopCalls5/app/controllers/companies_controller.rb	  def create
 create	C:/Sites/StopCalls5/app/controllers/line_items_controller.rb	  def create
 create	C:/Sites/StopCalls5/app/controllers/orders_controller.rb	  def create

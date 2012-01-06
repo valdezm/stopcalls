@@ -4,6 +4,8 @@ StopCalls5::Application.routes.draw do
   get "violation_types/show_all"
   get "companies/list"
   get "violation_logs/add"
+  match "phone_lists/company_add/:id" => "phone_lists#company_add", :as => "new_phone"
+  
   resources :violations
 
   resources :violation_logs

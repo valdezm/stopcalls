@@ -21,6 +21,12 @@ class PhoneListsController < ApplicationController
     end
   end
 
+def company_add
+  @phone_list = PhoneList.new
+  @company = Company.find(params[:id])
+  @phone_list.company_id=@company.id
+    
+end
   # GET /phone_lists/new
   # GET /phone_lists/new.json
   def new

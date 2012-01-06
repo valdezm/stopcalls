@@ -28,6 +28,9 @@
 <% @company.phone_lists.each do |phone| %>
 <%='('+phone.area_code.to_s+') '+phone.phone_num.to_s%>
 <%end%>
+<p>
+<%= link_to 'Add a phone number to this company', new_phone_path(@company)%>
+</p>
 
 
 <%= link_to 'Back', companies_list_path %>
