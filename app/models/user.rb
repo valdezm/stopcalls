@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_one :testprofile2
   has_many :orders
   has_many :violation_lines
+  has_one :intake_form
+  accepts_nested_attributes_for :testprofile2
+  accepts_nested_attributes_for :intake_form
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Live in count:</b>
+  <%= @intake_question.live_in_count %>
+</p>
+
+<p>
+  <b>Sign contract:</b>
+  <%= @intake_question.sign_contract %>
+</p>
+
+<p>
+  <b>Contacting other:</b>
+  <%= @intake_question.contacting_other %>
+</p>
+
+<p>
+  <b>Recieved collection letters:</b>
+  <%= @intake_question.recieved_collection_letters %>
+</p>
+
+<p>
+  <b>Harrasing abusing:</b>
+  <%= @intake_question.harrasing_abusing %>
+</p>
+
+<p>
+  <b>False misleading:</b>
+  <%= @intake_question.false_misleading %>
+</p>
+
+<p>
+  <b>Unfair methods:</b>
+  <%= @intake_question.unfair_methods %>
+</p>
+
+<p>
+  <b>Paid money:</b>
+  <%= @intake_question.paid_money %>
+</p>
+
+<p>
+  <b>Bank acoount:</b>
+  <%= @intake_question.bank_acoount %>
+</p>
+
+
+<%= link_to 'Edit', edit_intake_question_path(@intake_question) %> |
+<%= link_to 'Back', intake_questions_path %>

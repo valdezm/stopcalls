@@ -1,0 +1,39 @@
+<h1>Listing intake_forms</h1>
+
+<table>
+  <tr>
+    <th>Sued</th>
+    <th>Garnashed</th>
+    <th>Name of collector</th>
+    <th>How much debt price</th>
+    <th>Total debt</th>
+    <th>Max amount afford</th>
+    <th>Judgements</th>
+    <th>Law suit inv real</th>
+    <th>Law suit inv cc</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @intake_forms.each do |intake_form| %>
+  <tr>
+    <td><%= intake_form.sued %></td>
+    <td><%= intake_form.garnashed %></td>
+    <td><%= intake_form.name_of_collector %></td>
+    <td><%= intake_form.how_much_debt_price %></td>
+    <td><%= intake_form.total_debt %></td>
+    <td><%= intake_form.max_amount_afford %></td>
+    <td><%= intake_form.judgements %></td>
+    <td><%= intake_form.law_suit_inv_real %></td>
+    <td><%= intake_form.law_suit_inv_cc %></td>
+    <td><%= link_to 'Show', intake_form %></td>
+    <td><%= link_to 'Edit', edit_intake_form_path(intake_form) %></td>
+    <td><%= link_to 'Destroy', intake_form, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Intake form', new_intake_form_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Learn how to sue:</b>
+  <%= @additional_service.learn_how_to_sue %>
+</p>
+
+<p>
+  <b>Learn how to reduce:</b>
+  <%= @additional_service.learn_how_to_reduce %>
+</p>
+
+<p>
+  <b>Lower mortgage:</b>
+  <%= @additional_service.lower_mortgage %>
+</p>
+
+<p>
+  <b>Correct mistakes:</b>
+  <%= @additional_service.correct_mistakes %>
+</p>
+
+<p>
+  <b>Hire lawyer:</b>
+  <%= @additional_service.hire_lawyer %>
+</p>
+
+
+<%= link_to 'Edit', edit_additional_service_path(@additional_service) %> |
+<%= link_to 'Back', additional_services_path %>

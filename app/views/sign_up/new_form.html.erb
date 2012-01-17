@@ -1,0 +1,142 @@
+<div id="sign-up"><h1>Stop Those Calls!</h1></div>
+<%= form_for @user, :url => { :action => "create_through_form" } do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this violation_type from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset class="form">
+<legend>Please sign up to begin using Stop Those Calls!</legend>
+    
+  Are you being:
+  <%= f.fields_for :intake_form do |iif|%>
+  <%= iif.radio_button :sued, 'true', :checked => true %> 
+  <%= label :contactmethod_email, 'Sued' %>
+  <%= iif.radio_button :sued, 'false' %>
+  <%= label :contactmethod_sms, 'Garnished' %>
+  
+  <div class="field">
+  <%= iif.label :name_of_collector %>
+  <%= iif.text_field :name_of_collector %>
+  </div>
+  <div class="field">
+  How much is the specific debt for which you're currently being sued or garnished?
+  <%= iif.text_field :how_much_debt_price %>
+  </div>
+  <div class="field">
+ What is the total amount of debt that you have?
+  <%= iif.text_field :total_debt %>
+  </div>
+  <div class="field">
+What is the maximum amount each month that you can afford to pay?
+  <%= iif.text_field :max_amount_afford %>
+  </div>
+  <div class="field">
+ Have judgments been entered against you on any debts?
+ <%= iif.radio_button :judgements, 'true', :checked => true %> 
+  <%= label :contactmethod_email, 'True' %>
+  <%= iif.radio_button :judgements, 'false' %>
+  <%= label :contactmethod_sms, 'False' %>
+  </div>
+  The lawsuit involves: 
+   <%= iif.radio_button :law_suit_inv_real, 'true', :checked => true %> 
+  <%= label :contactmethod_email, '"Real Property" (My house or other land I own)' %>
+  <%= iif.radio_button :law_suit_inv_real, 'false' %>
+  <%= label :contactmethod_sms, 'Credit Card Debt' %>  
+  
+  
+    <%= iif.fields_for :intake_question do |qif|%>
+    <div class="field"><br />
+    <%= qif.check_box :live_in_count %>Do you/did you live in the county where suit was filed/judgment was entered?
+  </div>
+  <div class="field"><br />
+    <%= qif.check_box :sign_contract %>Did you sign a contract with the creditor in the county where you are being or were sued?
+  </div>
+  <div class="field"><br />
+    <%= qif.check_box :contacting_other %>Is a debt collector contacting other people about your debt?
+  </div>
+  <div class="field"><br />
+    <%= qif.check_box :recieved_collection_letters %>Have you received collection letters from the law firm suing or garnishing you?
+  </div>
+  Do you receive, or have you received, collection calls from the law firm or debt collector that is suing or garnishing you?
+  <div class="field"><br />
+    <%= qif.check_box :harrasing_abusing %>Is the law firm or debt collector that is suing or garnishing you harassing, abusing or oppressing you?
+  </div>
+  <div class="field"><br />
+    <%= qif.check_box :false_misleading %>Is the law firm or debt collector suing or garnishing you using false, deceptive or misleading tactics against you? 
+  </div>
+  <div class="field"><br />
+    <%= qif.check_box :unfair_methods %>Is the law firm or debt collector suing or garnishing you using unfair collection methods against you?
+  </div>
+  <div class="field"><br />
+    <%= qif.check_box :paid_money %>Have you paid money to a debt collector?
+  </div>
+  <div class="field"><br />
+    <%= qif.check_box :bank_acoount %>Have your wages or bank account been garnished without prior notice?
+  </div>
+  <%end%>
+  
+</fieldset>
+
+<fieldset class="form">
+<legend>Contact Information</legend>
+  <%end%>
+ <div><%= f.label :email %>
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %>
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div>
+    
+<%= f.fields_for :testprofile2 do |cf|%>
+   <div class="field">
+    First Name
+    <%= cf.text_field :f_name %>
+  </div>
+  <div class="field">
+    Last Name
+    <%= cf.text_field :l_name %>
+  </div>
+  <div class="field">
+    Line Address
+    <%= cf.text_field :line_add %>
+  </div>
+  <div class="field">
+   City
+    <%= cf.text_field :city_add %>
+  </div>
+  <div class="field">
+    State
+    <%= cf.text_field :state_add %>
+  </div>
+  <div class="field">
+    Zip
+    <%= cf.number_field :zip_add %>
+  </div>
+  <div class="field">
+    Phone
+    <%= cf.number_field :phone_number %>
+  </div>
+    <div class="field">
+    Preferred Contact Method
+    <%= cf.text_field :preferred_contact_tpye %>
+  </div>
+  
+  <%end%>
+
+</fieldset>
+
+  <div class="actions">
+    <%= f.submit 'Sign Up'%>
+  </div>
+<% end %>
+

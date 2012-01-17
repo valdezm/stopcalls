@@ -1,0 +1,39 @@
+<h1>Listing intake_questions</h1>
+
+<table>
+  <tr>
+    <th>Live in count</th>
+    <th>Sign contract</th>
+    <th>Contacting other</th>
+    <th>Recieved collection letters</th>
+    <th>Harrasing abusing</th>
+    <th>False misleading</th>
+    <th>Unfair methods</th>
+    <th>Paid money</th>
+    <th>Bank acoount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @intake_questions.each do |intake_question| %>
+  <tr>
+    <td><%= intake_question.live_in_count %></td>
+    <td><%= intake_question.sign_contract %></td>
+    <td><%= intake_question.contacting_other %></td>
+    <td><%= intake_question.recieved_collection_letters %></td>
+    <td><%= intake_question.harrasing_abusing %></td>
+    <td><%= intake_question.false_misleading %></td>
+    <td><%= intake_question.unfair_methods %></td>
+    <td><%= intake_question.paid_money %></td>
+    <td><%= intake_question.bank_acoount %></td>
+    <td><%= link_to 'Show', intake_question %></td>
+    <td><%= link_to 'Edit', edit_intake_question_path(intake_question) %></td>
+    <td><%= link_to 'Destroy', intake_question, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Intake question', new_intake_question_path %>

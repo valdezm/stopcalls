@@ -1,0 +1,16 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+ul.topnav li ul.subnav li a {
+	float: left;
+	width: 145px;
+//  image-url("rails.png")
+background: #333  image_url('dropdown_linkbg.gif')  no-repeat 10px center;
+	padding-left: 20px;
+}
+ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+	background: #222 image_url('dropdown_linkbg.gif')  no-repeat 10px center;
+
+}

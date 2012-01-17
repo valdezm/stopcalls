@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111230164637) do
+ActiveRecord::Schema.define(:version => 20120112234721) do
+
+  create_table "additional_services", :force => true do |t|
+    t.boolean  "learn_how_to_sue"
+    t.boolean  "learn_how_to_reduce"
+    t.boolean  "lower_mortgage"
+    t.boolean  "correct_mistakes"
+    t.boolean  "hire_lawyer"
+    t.integer  "intake_form_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -19,6 +30,36 @@ ActiveRecord::Schema.define(:version => 20111230164637) do
     t.text     "description"
     t.string   "state_add"
     t.integer  "zip_add"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "intake_forms", :force => true do |t|
+    t.boolean  "sued"
+    t.boolean  "garnashed"
+    t.string   "name_of_collector"
+    t.decimal  "how_much_debt_price", :precision => 10, :scale => 2
+    t.decimal  "total_debt",          :precision => 10, :scale => 2
+    t.decimal  "max_amount_afford",   :precision => 10, :scale => 2
+    t.boolean  "judgements"
+    t.boolean  "law_suit_inv_real"
+    t.boolean  "law_suit_inv_cc"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "intake_questions", :force => true do |t|
+    t.boolean  "live_in_count"
+    t.boolean  "sign_contract"
+    t.boolean  "contacting_other"
+    t.boolean  "recieved_collection_letters"
+    t.boolean  "harrasing_abusing"
+    t.boolean  "false_misleading"
+    t.boolean  "unfair_methods"
+    t.boolean  "paid_money"
+    t.boolean  "bank_acoount"
+    t.integer  "intake_form_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,6 +118,8 @@ ActiveRecord::Schema.define(:version => 20111230164637) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "city_add"
+    t.integer  "phone_number"
+    t.string   "preferred_contact_tpye"
   end
 
   create_table "testprofiles", :force => true do |t|
@@ -114,7 +157,7 @@ ActiveRecord::Schema.define(:version => 20111230164637) do
   create_table "violation_lines", :force => true do |t|
     t.integer  "company_id"
     t.integer  "user_id"
-    t.integer  "violationtype_id"
+    t.integer  "violation_type_id"
     t.integer  "violationlog_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -133,6 +176,16 @@ ActiveRecord::Schema.define(:version => 20111230164637) do
     t.text     "description"
     t.string   "name"
     t.boolean  "is_referable"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "violations", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "violations2s", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end

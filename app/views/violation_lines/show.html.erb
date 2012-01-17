@@ -1,20 +1,25 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Company:</b>
-  <%= @violation_line.company_id %>
-</p>
+<h2>violation #<%=@violation_line.id%></h2>
+<div class="entry">
+<h3>Company: <%=@violation_line.company.name%></h3>
+Company Address: <%=@violation_line.company.add_line%><br>
+Company Address: <%=@violation_line.company.state_add%><br>
+Company Address: <%=@violation_line.company.zip_add%><br>
 
-<p>
-  <b>User:</b>
-  <%= @violation_line.user_id %>
-</p>
+A phone number: <%= @violation_line.company.phone_lists.first.phone_num if @violation_line.company.phone_lists.first %><br>
 
-<p>
-  <b>Violationtype:</b>
-  <%= @violation_line.violation_type_id %>
-</p>
+<h3>violation Data</h3>
+violation Type Name: <%=@violation_line.violation_type.name%><br>
 
+violation Type Description: <%=@violation_line.violation_type.description%><br>
 
-<%= link_to 'Edit', edit_violation_line_path(@violation_line) %> |
-<%= link_to 'Back', violation_lines_path %>
+violation Type Is Referable: <%=@violation_line.violation_type.is_referable%>
+
+</div>
+<%q=0%>
+<%@violation_line.violation_logs.each do |log|%>
+<%q=q+1%>
+<h3>Log #<%=q%></h3>
+Contact Name: <%= log.contact_name%> <br>Date of Log: <%= log.date%><br>Notes: <%= log.comments%><br>
+<%end%>
+

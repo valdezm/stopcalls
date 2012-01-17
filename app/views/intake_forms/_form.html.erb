@@ -1,0 +1,53 @@
+<%= form_for(@intake_form) do |f| %>
+  <% if @intake_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@intake_form.errors.count, "error") %> prohibited this intake_form from being saved:</h2>
+
+      <ul>
+      <% @intake_form.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :sued %><br />
+    <%= f.check_box :sued %>
+  </div>
+  <div class="field">
+    <%= f.label :garnashed %><br />
+    <%= f.check_box :garnashed %>
+  </div>
+  <div class="field">
+    <%= f.label :name_of_collector %><br />
+    <%= f.text_field :name_of_collector %>
+  </div>
+  <div class="field">
+    <%= f.label :how_much_debt_price %><br />
+    <%= f.text_field :how_much_debt_price %>
+  </div>
+  <div class="field">
+    <%= f.label :total_debt %><br />
+    <%= f.text_field :total_debt %>
+  </div>
+  <div class="field">
+    <%= f.label :max_amount_afford %><br />
+    <%= f.text_field :max_amount_afford %>
+  </div>
+  <div class="field">
+    <%= f.label :judgements %><br />
+    <%= f.check_box :judgements %>
+  </div>
+  <div class="field">
+    <%= f.label :law_suit_inv_real %><br />
+    <%= f.check_box :law_suit_inv_real %>
+  </div>
+  <div class="field">
+    <%= f.label :law_suit_inv_cc %><br />
+    <%= f.check_box :law_suit_inv_cc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

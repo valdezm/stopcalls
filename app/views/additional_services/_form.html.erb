@@ -1,0 +1,37 @@
+<%= form_for(@additional_service) do |f| %>
+  <% if @additional_service.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@additional_service.errors.count, "error") %> prohibited this additional_service from being saved:</h2>
+
+      <ul>
+      <% @additional_service.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :learn_how_to_sue %><br />
+    <%= f.check_box :learn_how_to_sue %>
+  </div>
+  <div class="field">
+    <%= f.label :learn_how_to_reduce %><br />
+    <%= f.check_box :learn_how_to_reduce %>
+  </div>
+  <div class="field">
+    <%= f.label :lower_mortgage %><br />
+    <%= f.check_box :lower_mortgage %>
+  </div>
+  <div class="field">
+    <%= f.label :correct_mistakes %><br />
+    <%= f.check_box :correct_mistakes %>
+  </div>
+  <div class="field">
+    <%= f.label :hire_lawyer %><br />
+    <%= f.check_box :hire_lawyer %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

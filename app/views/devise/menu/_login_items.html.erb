@@ -5,11 +5,14 @@
 </li>
 <%end%>
    <li>
+    <span>
    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+</span>
   
    </li>
  <% else %>
-   <li>
-   <%= link_to('Login', new_user_session_path)  %>
+   <li>Already registered?
+       <span>
+        <%= link_to('Login', new_user_session_path)  %>   </span>
    </li>
  <% end %>

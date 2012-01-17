@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sued:</b>
+  <%= @intake_form.sued %>
+</p>
+
+<p>
+  <b>Garnashed:</b>
+  <%= @intake_form.garnashed %>
+</p>
+
+<p>
+  <b>Name of collector:</b>
+  <%= @intake_form.name_of_collector %>
+</p>
+
+<p>
+  <b>How much debt price:</b>
+  <%= @intake_form.how_much_debt_price %>
+</p>
+
+<p>
+  <b>Total debt:</b>
+  <%= @intake_form.total_debt %>
+</p>
+
+<p>
+  <b>Max amount afford:</b>
+  <%= @intake_form.max_amount_afford %>
+</p>
+
+<p>
+  <b>Judgements:</b>
+  <%= @intake_form.judgements %>
+</p>
+
+<p>
+  <b>Law suit inv real:</b>
+  <%= @intake_form.law_suit_inv_real %>
+</p>
+
+<p>
+  <b>Law suit inv cc:</b>
+  <%= @intake_form.law_suit_inv_cc %>
+</p>
+
+
+<%= link_to 'Edit', edit_intake_form_path(@intake_form) %> |
+<%= link_to 'Back', intake_forms_path %>

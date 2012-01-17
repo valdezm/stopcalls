@@ -1,0 +1,64 @@
+<h1 id="sign-up">Sign Up to begin using StopTheCalls!</h1>
+<%= form_for @user, :url => { :action => "create" } do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this violation_type from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+    
+<%= f.fields_for :testprofile2 do |cf|%>
+   <div class="field">
+    First Name<br />
+    <%= cf.text_field :f_name %>
+  </div>
+  <div class="field">
+    Last Name<br />
+    <%= cf.text_field :l_name %>
+  </div>
+  <div class="field">
+    Line Address<br />
+    <%= cf.text_field :line_add %>
+  </div>
+  <div class="field">
+   City<br />
+    <%= cf.text_field :city_add %>
+  </div>
+  <div class="field">
+    State<br />
+    <%= cf.text_field :state_add %>
+  </div>
+  <div class="field">
+    Zip<br />
+    <%= cf.number_field :zip_add %>
+  </div>
+  <div class="field">
+    Phone<br />
+    <%= cf.number_field :phone_number %>
+  </div>
+    <div class="field">
+    Preferred Contact Method<br />
+    <%= cf.text_field :preferred_contact_tpye %>
+  </div>
+  
+  <%end%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

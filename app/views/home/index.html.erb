@@ -33,19 +33,4 @@
     <%end%>
   <%end%>
 </div>
-<% else %>
-<div>
-  <h1>Sign Up to begin using StopTheCalls!</h1>
-    <h1>Products Offered</h1>
-    <%@products.each do |product|%>
-    <div class="entry">
-      <%=image_tag(product.image_url)%>
-      <h3><%=product.title%></h3>
-      <%= sanitize(product.description) %>
-      <div class="price_line">
-        <span class="price"><%=number_to_currency(product.price)%></span>
-      </div>
-    </div>
-    <%end%>
-</div>
 <%end%>

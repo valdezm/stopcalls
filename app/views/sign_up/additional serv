@@ -1,0 +1,22 @@
+
+<fieldset class="form">
+<legend>Additional Services</legend>
+  <%= iif.fields_for :additional_service do |aif|%>
+<br /><br />    <div class="field"> <%= aif.check_box :learn_how_to_sue %>Would you like to learn how to sue a debt collector who has violated your Fair Debt rights?
+  </div>
+  <div class="field"><br />
+    <%= aif.check_box :learn_how_to_reduce %>Would you like to learn how to reduce and settle your debts for less than you owe?
+  </div>
+  <div class="field"><br />
+    <%= aif.check_box :lower_mortgage %>Would you like to learn how to lower your mortgage payment or set up a short sale?
+  </div>
+  <div class="field"><br />
+    <%= aif.check_box :correct_mistakes %>Would you like to learn how to correct mistakes on your credit report?
+  </div>
+  <div class="field"><br />
+    <%= aif.check_box :hire_lawyer %>Would you like to learn how you can hire a lawyer for less than $20 month to send letters that stop collection calls & letters?
+  </div>
+  
+  <%end%>
+
+</fieldset>

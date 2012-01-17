@@ -1,10 +1,23 @@
 StopCalls5::Application.routes.draw do
+  
+  get "sign_up/new_form"
+  match 'sign_up/create_through_form' => 'sign_up#create_through_form', :via => :post
+  get "sign_up/new"  
+  match 'sign_up/create' => 'sign_up#create', :via => :post
+  
+  resources :intake_questions
+
+  resources :additional_services
+
+  resources :intake_forms
+
   get "violations/admin"
   get "violations/index"
   get "violation_types/show_all"
   get "companies/list"
   get "violation_logs/add"
   match "phone_lists/company_add/:id" => "phone_lists#company_add", :as => "new_phone"
+  
   
   resources :violations
 

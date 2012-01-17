@@ -5,7 +5,7 @@
   <%= link_to "Edit Information", edit_testprofile2_path(current_user.testprofile2) %>
    </li>
     <%if current_user.role? :Admin%>
-    <h3>Admin</h3>
+    <h3 class="menu_item">Admin</h3>
     
 	    <li><a href="/testprofile2s/">View Profiles</a></li>
       
@@ -16,14 +16,14 @@
 	    <li><%= link_to "View All Violations", violations_admin_path %></li>
       
     <%end%>
-    <h3>Orders</h3>
+    <h3 class="menu_item">Orders</h3>
     
        <li><a href="/myorders/">My Orders</a></li>
-      <h3>Violations</h3>
+      <h3 class="menu_item">Violations</h3>
       <li><%= link_to "Logged Violations", violations_path %></li>
       <li><%= link_to "Add New Violation", new_violation_path %></li>
       <li><%= link_to "Add Log Data", violation_logs_add_path %></li>
-      <h3>Help</h3>
+      <h3 class="menu_item">Help</h3>
      	<li><%= link_to "Violations List", violation_types_show_all_path %></li>
      	<li><%= link_to "Companies List", companies_list_path %></li>
       

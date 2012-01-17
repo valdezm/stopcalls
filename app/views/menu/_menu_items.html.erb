@@ -1,0 +1,115 @@
+<ul class="topnav">  
+        <li><a href="/">Home</a></li>  
+       
+         <% if user_signed_in? %>
+        <li>  
+            <a>Settings</a>  
+       <ul class="subnav">  
+              
+              <li>
+              <%= link_to('Edit Account', edit_user_registration_path) %>
+  </li>
+    <% if current_user.testprofile2 %>
+   <li>
+  
+  <%= link_to "Edit Information", edit_testprofile2_path(current_user.testprofile2) %>
+   </li>
+  <%else%>
+    <li>  
+  <%= link_to "Create your profile", new_testprofile2_path %>
+   </li>
+  <%end%>
+            </ul>  
+    </li>   
+           <% else %>
+   <li>
+   <%= link_to('Sign Up', sign_up_new_path)  %>
+   </li>
+  <%end%>
+           <% if user_signed_in? %>
+          <% unless current_user.orders.empty? %>
+          <li>  
+            <a>Orders</a>  
+            
+       <ul class="subnav">  
+        <%i=0%>
+<%current_user.orders.each do |order|%>
+<%i=i+1%>
+<li><%= link_to 'Order '+i.to_s, order %></li>
+<%end%>
+        
+      </ul>
+    </li>
+      <%end%>
+        <%end%>
+          
+    
+    
+    
+    <% if user_signed_in? %>
+    <%unless(current_user.violation_lines.empty?)%>
+ 
+
+<li><a> Logged Violations</a>
+             <%i=0%>
+             <ul class="subnav">
+<%current_user.violation_lines.each do |violation|%>
+<%i=i+1%>
+<li><%= link_to 'Violation '+i.to_s, violation %></li>
+
+<%end%>
+</ul>
+</li>
+          <%end%>
+
+    <li>  
+            <a>Violations</a>  
+            
+            <ul class="subnav">
+      <li><%= link_to "Add New Violation", new_violation_path %></li>
+      <%unless current_user.violation_lines.empty?%>
+      <li><%= link_to "Add Log Data", violation_logs_add_path %></li>
+      <%end%>
+    </ul>
+  </li>
+  
+  <li>  
+            <a> Help</a>  
+            
+            <ul class="subnav">
+     	<li><%= link_to "Violations List", violation_types_show_all_path %></li>
+     	<li><%= link_to "Companies List", companies_list_path %></li>
+       </ul>
+  </li>
+    
+    
+    
+  <%end%>
+
+    <li><a href="#">About Us</a></li>  
+    <li><a href="#">Contact Us</a></li>  
+ 
+    
+    <% if user_signed_in? %>
+    <%if current_user.role? :Admin%>
+ <li>  
+            <a>Admin</a>  
+            
+<ul class="subnav">  
+    
+	    <li><a href="/testprofile2s/">View Profiles</a></li>
+      
+	    <li><a href="/products/">View Products</a></li>
+      
+	    <li><a href="/orders/">View Orders</a></li>
+      
+	    <li><%= link_to "View All Violations", violations_admin_path %></li>
+      </ul>  
+
+        </li>  
+    <%end%>
+    <%end%>
+
+    
+    
+</ul>    

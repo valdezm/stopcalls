@@ -10,7 +10,8 @@
       </ul>
     </div>
   <% end %>
-
+<h3>Violation</h3>
+<%= f.select(:violation_line_id, current_user.violation_lines.collect{|v|[v.company.name + ' - ' +v.violation_type.name, v.id]})%>
   <div class="field">
     <%= f.label :comments %><br />
     <%= f.text_area :comments %>
@@ -24,8 +25,6 @@
     <%= f.text_field :date %>
   </div>
    
-<h3>Violation</h3>
-<%= f.select(:violation_line_id, current_user.violation_lines.collect{|v|[v.company.name + ' - ' +v.violation_type.name, v.id]})%>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,30 +1,22 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>F name:</b>
-  <%= @testprofile2.f_name %>
-</p>
-
-<p>
-  <b>L name:</b>
-  <%= @testprofile2.l_name %>
-</p>
-
-<p>
-  <b>Line add:</b>
-  <%= @testprofile2.line_add %>
-</p>
-
-<p>
-  <b>State add:</b>
-  <%= @testprofile2.state_add %>
-</p>
-
-<p>
-  <b>Zip add:</b>
-  <%= @testprofile2.zip_add %>
-</p>
-
-
-<%= link_to 'Edit', edit_testprofile2_path(@testprofile2) %> |
-<%= link_to 'Back', root_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Pay type</th>
+    <th></th>
+    <th></th>
+    <th>Products</th>
+  </tr>
+  <tr>
+    <td><%= @order.name %></td>
+    <td><%= @order.address %></td>
+    <td><%= @order.pay_type %></td>
+    <td></td>
+    <td>  </td>
+    <%@order.line_items.each do |line|%>
+    <td>Line ID: <%= line.id%> Title of Product: <%= line.product.title%></td>
+<%end%>
+    
+  </tr>
+</table>

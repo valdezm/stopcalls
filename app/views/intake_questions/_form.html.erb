@@ -1,0 +1,53 @@
+<%= form_for(@intake_question) do |f| %>
+  <% if @intake_question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@intake_question.errors.count, "error") %> prohibited this intake_question from being saved:</h2>
+
+      <ul>
+      <% @intake_question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :live_in_count %><br />
+    <%= f.check_box :live_in_count %>
+  </div>
+  <div class="field">
+    <%= f.label :sign_contract %><br />
+    <%= f.check_box :sign_contract %>
+  </div>
+  <div class="field">
+    <%= f.label :contacting_other %><br />
+    <%= f.check_box :contacting_other %>
+  </div>
+  <div class="field">
+    <%= f.label :recieved_collection_letters %><br />
+    <%= f.check_box :recieved_collection_letters %>
+  </div>
+  <div class="field">
+    <%= f.label :harrasing_abusing %><br />
+    <%= f.check_box :harrasing_abusing %>
+  </div>
+  <div class="field">
+    <%= f.label :false_misleading %><br />
+    <%= f.check_box :false_misleading %>
+  </div>
+  <div class="field">
+    <%= f.label :unfair_methods %><br />
+    <%= f.check_box :unfair_methods %>
+  </div>
+  <div class="field">
+    <%= f.label :paid_money %><br />
+    <%= f.check_box :paid_money %>
+  </div>
+  <div class="field">
+    <%= f.label :bank_acoount %><br />
+    <%= f.check_box :bank_acoount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

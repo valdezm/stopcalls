@@ -1,0 +1,2 @@
+module IntakeQuestionsHelper
+end
