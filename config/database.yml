@@ -15,7 +15,7 @@ development:
   database: StopCalls5_development
   pool: 5
   username: root
-  password:
+  password: new
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -28,7 +28,7 @@ test:
   database: StopCalls5_test
   pool: 5
   username: root
-  password:
+  password: new
   host: localhost
 
 production:
@@ -38,5 +38,5 @@ production:
   database: StopCalls5_production
   pool: 5
   username: root
-  password:
+  password: new
   host: localhost
