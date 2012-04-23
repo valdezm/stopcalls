@@ -1,7 +1,7 @@
  <% if user_signed_in? %>
 <div>  
   <% if current_user.testprofile2 %>
-      <h1>Products Offered - TEST - BACK</h1>
+      <h1>Products Offered</h1>
     <%@products.each do |product|%>
     <div class="entry">
       <%=image_tag(product.image_url)%>
